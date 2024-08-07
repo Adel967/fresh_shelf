@@ -81,7 +81,23 @@ class _SplashScreenState extends State<SplashScreen>
     return Scaffold(
       backgroundColor: _animation.value,
       body: Center(
-        child: Image.asset(AssetsLink.APP_LOGO),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              AssetsLink.APP_LOGO,
+              width: 100,
+              height: 100,
+            ),
+            Text(
+              "Daily Basket",
+              style: TextStyle(
+                  color: Color(0XFF2d7283),
+                  fontWeight: FontWeight.w600,
+                  fontSize: 20),
+            ),
+          ],
+        ),
       ),
     );
   }

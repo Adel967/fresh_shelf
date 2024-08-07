@@ -51,8 +51,11 @@ class MyApp extends StatelessWidget {
               iconTheme: IconThemeData(color: Colors.white),
               //appBarTheme: AppBarTheme(backgroundColor: Styles.backgroundColor),
               //scaffoldBackgroundColor: Styles.backgroundColor,
-              inputDecorationTheme: Styles.inputDecorationStyle
-                  .copyWith(fillColor: Styles.backgroundColor),
+              inputDecorationTheme: Styles.inputDecorationStyle.copyWith(
+                  fillColor: ColorScheme.fromSeed(
+                          seedColor: Styles.colorPrimary,
+                          brightness: Brightness.dark)
+                      .background),
             ),
             theme: ThemeData(
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

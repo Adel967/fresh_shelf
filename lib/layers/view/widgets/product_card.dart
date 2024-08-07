@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fresh_shelf/core/configuration/styles.dart';
 import 'package:fresh_shelf/layers/data/model/product.dart';
 import 'package:fresh_shelf/layers/view/widgets/show_product.dart';
@@ -31,7 +33,7 @@ class ProductCard extends StatelessWidget {
       },
       child: Container(
         width: width,
-        height: height,
+        height: height.h,
         margin: EdgeInsets.symmetric(vertical: 5),
         decoration: BoxDecoration(
           color: Styles.colorPrimary,
@@ -40,13 +42,14 @@ class ProductCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomImage(
-              product.picture!,
-              width: double.infinity,
-              bgColor: Colors.grey.shade300,
-              isNetwork: true,
-              height: 190,
-              radius: 15,
+            Expanded(
+              child: CustomImage(
+                product.picture!,
+                width: double.infinity,
+                bgColor: Colors.grey.shade300,
+                isNetwork: true,
+                radius: 15,
+              ),
             ),
             Container(
               width: width - 20,

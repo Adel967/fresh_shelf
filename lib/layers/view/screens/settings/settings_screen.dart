@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fresh_shelf/core/ui/responsive_text.dart';
+import 'package:fresh_shelf/core/utils/size_config.dart';
 import 'package:fresh_shelf/layers/view/screens/settings/widgets/settings_card.dart';
 import 'package:provider/provider.dart';
 
@@ -32,6 +34,8 @@ class SettingsScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
+                  constraints:
+                      BoxConstraints(maxWidth: SizeConfig.screenWidth * 0.6),
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   decoration: BoxDecoration(
                     color: Styles.colorPrimary.withOpacity(0.7),
@@ -41,9 +45,11 @@ class SettingsScreen extends StatelessWidget {
                     final email = Provider.of<AppState>(context, listen: true)
                         .user!
                         .email;
-                    return Text(
-                      email,
-                      style: TextStyle(fontSize: 18),
+                    return ResponsiveText(
+                      textWidget: Text(
+                        email,
+                        style: TextStyle(fontSize: 18),
+                      ),
                     );
                   }),
                 ),

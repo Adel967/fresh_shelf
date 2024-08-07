@@ -20,7 +20,7 @@ class SubCategoryCubit extends Cubit<SubCategoryState> {
         .getSubCategories(SubCategoryParams(categoryId: categoryId));
     emit(res.fold((l) => SubCategoryError(error: l.data!), (r) {
       if (r.isNotEmpty) {
-        sl<ProductCubit>().getProducts(r.first.categoryId);
+        sl<ProductCubit>().getProducts(r.first.id);
       }
       return SubCategoryLoaded(subCategories: r);
     }));

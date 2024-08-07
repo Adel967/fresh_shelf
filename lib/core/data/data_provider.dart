@@ -18,7 +18,6 @@ abstract class RemoteDataSource {
       final url = AppConfigurations.BaseUrl + model.url!;
       Map<String, dynamic> map = model.urlParams;
       map["lang"] = sl<LocaleProvider>().locale.languageCode;
-      print(map);
 
       final response = await dio.get(
         url,
